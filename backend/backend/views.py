@@ -1,11 +1,11 @@
 import json
 from django.core.handlers.wsgi import WSGIRequest
-from django.http import HttpResponse
+from django.http import HttpResponse, StreamingHttpResponse
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .services import MarkJSON
-from .utils import write_to_data, get_model_data
+from .utils import write_to_data, get_data_json
 
 
 @api_view(['POST'])
@@ -41,17 +41,12 @@ def get_json_file(request: WSGIRequest):
 
 
 @api_view(['GET'])
-def get_models(request: WSGIRequest):
-    result = get_model_data(request.body)
+def get_data(request: WSGIRequest):
+    result = get_data_json()
+    print(result)
+    response = StreamingHttpResponse(result, content_type='application/json', status=status.HTTP_200_OK)
 
-    if result:
-        json_data = json.dumps(result, ensure_ascii=False, indent=4)
+    # Устанавливаем заголовок Content-Disposition для загрузки файла
+    response['Content-Disposition'] = f'attachment; filename="data.json"'
 
-        response = HttpResponse(json_data, content_type='application/json', status=status.HTTP_200_OK)
-
-        # Устанавливаем заголовок Content-Disposition для загрузки файла
-        response['Content-Disposition'] = f'attachment; filename="{result["model"]}.json"'
-        response['Content-Length'] = len(json_data)
-
-        return response
-    return Response(status=status.HTTP_404_NOT_FOUND)
+    return response

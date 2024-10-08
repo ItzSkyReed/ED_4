@@ -16,11 +16,7 @@ def write_to_data(json_data: dict):
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 
-def get_model_data(model: str) -> None | dict:
+def get_data_json() -> str:
     with open(r'data.json', encoding='utf-8') as file:
-        data: dict = json.load(file)
-    model_data = data.get(model)
-    if model_data is not None:
-        model_data["model"] = model
-    return model_data
+        return file.read()
 

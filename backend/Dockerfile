@@ -1,5 +1,5 @@
 # Используем официальный образ Python в качестве базового образа
-FROM python
+FROM python:3.12.7-bookworm
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1

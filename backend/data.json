@@ -1,16 +1,37 @@
 {
-    "Iphone 16": {
-        "brand": "Apple",
-        "type": "Phone",
-        "date": 1728086400,
-        "country": "USA",
-        "desc": "Айфон 16 новый крутой все рады"
-    },
-    "sru1n": {
-        "brand": "srun",
-        "date": 1728086400,
-        "country": "srun",
-        "desc": "srun",
-        "type": "srun"
-    }
+  "Iphone 16": {
+    "brand": "Apple",
+    "type": "Phone",
+    "date": 1728086400,
+    "country": "USA",
+    "desc": "Айфон 16 новый крутой все рады"
+  },
+  "Iphone 11": {
+    "brand": "Apple",
+    "type": "Phone",
+    "date": 1728086400,
+    "country": "USA",
+    "desc": "Айфон 16 новый крутой все рады"
+  },
+  "Iphone 111": {
+    "brand": "Apple",
+    "type": "Phone",
+    "date": 1728086400,
+    "country": "USA",
+    "desc": "Айфон 16 новый крутой все рады"
+  },
+  "Iphone 11241": {
+    "brand": "Apple",
+    "type": "Phone",
+    "date": 1728086400,
+    "country": "USA",
+    "desc": "Айфон 16 новый крутой все рады"
+  },
+  "Iphone 1111": {
+    "brand": "Apple",
+    "type": "Phone",
+    "date": 1728086400,
+    "country": "USA",
+    "desc": "Айфон 16 новый крутой все рады"
+  }
 }

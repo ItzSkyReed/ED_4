@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('post/send_json', views.get_user_json),
     path('post/send_json_file', views.get_json_file),
+    path('get/get_data', views.get_data),
 ]

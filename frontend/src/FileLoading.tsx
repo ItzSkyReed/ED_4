@@ -45,7 +45,7 @@ class FileLoading extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Загрузить готовый файл JSON</h2>
+                <h2>Загрузить готовый файл с инф. о марке</h2>
                 <input className="file-upload-button"
                        ref={this.fileInput}
                        type="file"
