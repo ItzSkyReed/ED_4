@@ -32,10 +32,6 @@ class MarkJSON:
             'desc': str
         }
 
-        # Проверяем, что значение по ключу модели является словарем
-        if not isinstance(json_data, dict):
-            return False
-
         # Проверяем, что в model_data есть все необходимые поля
         if any(field not in json_data for field in required_fields):
             return False

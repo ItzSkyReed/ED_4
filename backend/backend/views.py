@@ -43,7 +43,6 @@ def get_json_file(request: WSGIRequest):
 @api_view(['GET'])
 def get_data(request: WSGIRequest):
     result = get_data_json()
-    print(result)
     response = StreamingHttpResponse(result, content_type='application/json', status=status.HTTP_200_OK)
 
     # Устанавливаем заголовок Content-Disposition для загрузки файла

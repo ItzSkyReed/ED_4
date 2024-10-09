@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent} from 'react';
-import './MarkForm.css';
+import './styles.css';
 import FormHandler from "./FormHandler"; // Стили
 
 interface MarkFormState {

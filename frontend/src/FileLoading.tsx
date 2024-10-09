@@ -1,5 +1,5 @@
 import React from 'react';
-import './MarkForm.css';
+import './styles.css';
 
 class FileLoading extends React.Component {
     private fileInput: React.RefObject<HTMLInputElement>;
@@ -15,7 +15,6 @@ class FileLoading extends React.Component {
         if (files && files.length > 0) {
             const file = files[0];
 
-            // Создаем FormData для отправки файла
             const formData = new FormData();
             formData.append('file', file); // 'file' — это имя, с которым сервер будет получать файл
 

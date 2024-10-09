@@ -1,5 +1,5 @@
 import React from 'react';
-import './MarkForm.css';
+import './styles.css';
 
 class GetFile extends React.Component {
 
@@ -14,10 +14,10 @@ class GetFile extends React.Component {
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.setAttribute('download', 'data.json'); // Имя файла при скачивании
+                link.setAttribute('download', 'data.json');
                 document.body.appendChild(link);
                 link.click();
-                link.parentNode?.removeChild(link); // Удаляем ссылку после скачивания
+                link.parentNode?.removeChild(link);
             } else {
                 throw new Error("Ошибка при скачивании файла");
             }
