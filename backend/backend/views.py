@@ -1,4 +1,6 @@
 import json
+from datetime import datetime
+
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse, StreamingHttpResponse
 from rest_framework import status
@@ -36,6 +38,10 @@ def get_json_file(request: WSGIRequest):
 
     response: Response = MarkJSON.validate(mark_data)
     if response.status_code == status.HTTP_200_OK:
+        try:
+            datetime.strptime(mark_data['date'], '%Y-%m-%d')
+        except ValueError:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={'error': 'Некорректный формат даты, он должен соответствовать "%Y-%m-%d"'})
         write_to_data(mark_data)
     return response
 
